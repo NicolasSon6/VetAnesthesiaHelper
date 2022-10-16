@@ -23,18 +23,16 @@ while operating:
     speciesCheck = input("Is your client a Feline or a Canine? Type 'F' or 'C'.\n").lower()
     weightConfirm = True
     while weightConfirm:
-        # ASK IF ITS KG OR LB, BUT IF ITS KG IT BREAKS BECAUSE I DIDNT THINK THAT FAR AHEAD
         lbOrKg = input("Are you measuring in pounds (lb) or kilograms (kg)?").lower()
         if lbOrKg == "lb":
             lbWeight = float(input("How much does your client's animal weigh in pounds (lbs)?\n"))
-            kgWeight = lbToKgConvert(lbWeight)#THIS DOES NOT COVER NON NUMERICAL INPUTS
-        elif lbOrKg == "kg": #maybe polish these with .lower()
+            kgWeight = lbToKgConvert(lbWeight)
+        elif lbOrKg == "kg":
             kgWeight = float(input("How much does your client's animal weigh in kilograms (kg)?\n"))
         else:
             print("Please restart and insert LB or KG next time.")
             exit()
             # redundant, see above lines if lbOrKg == "lb":
-            # lbWeight = float(input("How much does your client's animal weigh in pounds (lbs)?\n")) #THIS DOES NOT COVER NON INTEGER INPUTS
         if lbWeight >= 18.0 or kgWeight >= 8.1 and speciesCheck == "F":
             weightCheck = input("You listed that the feline is equal to or over 18lbs / 8.1 kgs.. If this is correct, type 'Y' to continue.\n").lower()
             if weightCheck == "y":
